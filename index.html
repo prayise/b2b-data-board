@@ -13,15 +13,45 @@
             <label for="dashboard">확인할 대시보드 선택:</label>
             <select id="dashboard">
                 <option value="">대시보드를 선택하세요</option>
-                <option value="dashboard1">대시보드 1</option>
+                <option value="dashboard1">코스 학습목차 추출</option>
                 <option value="dashboard2">대시보드 2</option>
                 <option value="dashboard3">대시보드 3</option>
             </select>
         </div>
-        <div class="dashboard-embed">
-            <!-- 임베드된 메타보드 대시보드가 여기에 표시됩니다. -->
+        <div class="dashboard-embed" id="dashboard-embed">
             <div class="embed-placeholder">대시보드를 선택하면 이곳에 임베드됩니다.</div>
         </div>
     </div>
+    <script>
+        // 실제 서비스에서는 iframeUrl을 서버에서 받아와야 함
+        const dashboardUrls = {
+            dashboard1: {
+                title: '코스 학습목차 추출',
+                url: 'http://skillflo-metabase.dev.day1co.io/embed/question/eyJhbGciOiJIUzI1NiJ9.eyJyZXNvdXJjZSI6eyJxdWVzdGlvbiI6MjI4fSwicGFyYW1zIjp7fSwiZXhwIjoxNzE3NTQwMDAwfQ.2Qn6QwQwQnQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQw#bordered=true&titled=true'
+            }
+            // dashboard2, dashboard3는 추후 추가
+        };
+        const select = document.getElementById('dashboard');
+        const embedDiv = document.getElementById('dashboard-embed');
+        select.addEventListener('change', function() {
+            const value = select.value;
+            embedDiv.innerHTML = '';
+            if (dashboardUrls[value]) {
+                const title = document.createElement('h2');
+                title.textContent = dashboardUrls[value].title;
+                title.style.marginBottom = '18px';
+                const iframe = document.createElement('iframe');
+                iframe.src = dashboardUrls[value].url;
+                iframe.setAttribute('frameborder', '0');
+                iframe.width = '800';
+                iframe.height = '600';
+                iframe.setAttribute('allowtransparency', 'true');
+                embedDiv.appendChild(title);
+                embedDiv.appendChild(iframe);
+            } else {
+                embedDiv.innerHTML = '<div class="embed-placeholder">대시보드를 선택하면 이곳에 임베드됩니다.</div>';
+            }
+        });
+    </script>
 </body>
 </html> 
