@@ -18,7 +18,7 @@ p {
 }
 
 .container {
-    width: 800px;
+    width: 1200px;
     min-height: 600px;
     margin: 60px auto;
     background: #fff;
@@ -55,7 +55,7 @@ p {
 .dashboard-embed {
     min-height: 600px;
     height: 600px;
-    width: 800px;
+    width: 1200px;
     background: #f0f4fa;
     border-radius: 8px;
     display: flex;
@@ -71,7 +71,7 @@ p {
     font-size: 1.1em;
 }
 
-@media (max-width: 820px) {
+@media (max-width: 1220px) {
     .container, .dashboard-embed {
         width: 100vw;
         min-width: 0;
