@@ -1,0 +1,66 @@
+body {
+    font-family: 'Noto Sans KR', Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    color: #2d8cf0;
+    margin-top: 0;
+    margin-bottom: 32px;
+}
+
+p {
+    color: #333;
+    font-size: 1.2em;
+}
+
+.container {
+    max-width: 500px;
+    margin: 60px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 40px 30px 32px 30px;
+}
+
+.dashboard-select {
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+.dashboard-select label {
+    font-size: 1.1em;
+    margin-right: 10px;
+    color: #222;
+}
+
+.dashboard-select select {
+    padding: 8px 16px;
+    font-size: 1em;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.dashboard-select select:focus {
+    border: 1.5px solid #2d8cf0;
+}
+
+.dashboard-embed {
+    min-height: 220px;
+    background: #f0f4fa;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px dashed #b3c6e0;
+}
+
+.embed-placeholder {
+    color: #888;
+    font-size: 1.1em;
+} 
